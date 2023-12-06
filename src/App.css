@@ -1,0 +1,98 @@
+:root {
+  --theme-color: #6852ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hedvig Letters Sans", sans-serif;
+  background-color: black;
+  color: white;
+}
+.header {
+  border-bottom: 1px solid rgb(70, 70, 70);
+  padding: 20px 50px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  backdrop-filter: blur(8px); /* Adjust the blur value as needed */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+  background-color: rgba(255, 255, 255, 0.107);
+}
+.app-body {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  gap: 30px;
+  position: relative;
+  margin-top: 60px;
+  padding: 0px 50px;
+}
+
+.post {
+  border-left: 1px solid rgb(70, 70, 70);
+  border-right: 1px solid rgb(70, 70, 70);
+}
+
+.post__area {
+  display: grid;
+  grid-template-columns: auto 90%;
+  padding: 20px;
+}
+
+.post__area img {
+  border-radius: 50%;
+  width: 35px;
+}
+.pfp {
+  border-radius: 50%;
+  width: 35px;
+}
+
+.post__area textarea {
+  background-color: black;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0px 20px;
+  color: white;
+  font-size: 1.5em;
+}
+.post__area button {
+  background-color: var(--theme-color);
+  color: white;
+  border: none;
+  height: 30px;
+  width: 80px;
+  font-size: 0.9em;
+  border-radius: 50px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.post ul {
+  list-style-type: none;
+  border-top: 1px solid rgb(70, 70, 70);
+}
+.post li {
+  border-bottom: 1px solid rgb(70, 70, 70);
+  padding: 30px 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.post__content {
+  margin-left: 20px;
+  font-size: 1.2em;
+}
+.post__content p {
+  font-size: 1em;
+}
