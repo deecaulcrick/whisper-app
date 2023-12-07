@@ -2,38 +2,38 @@ import React, { useState } from "react";
 import pfp from "../assets/test-image.png";
 
 const Feed = () => {
-  const [todos, setTodos] = useState([]);
+  const [whispers, setWhispers] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
-  const addTodo = () => {
+  const addWhisper = () => {
     if (inputValue.trim() !== "") {
-      const newTodo = {
-        id: todos.length + 1,
+      const newWhisper = {
+        id: whispers.length + 1,
         text: inputValue,
         done: false,
       };
-      setTodos([...todos, newTodo]);
+      setWhispers([...whispers, newWhisper]);
       setInputValue("");
     }
   };
 
-  const updateTodo = (id, newText) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, text: newText } : todo
+  const updateWhisper = (id, newText) => {
+    const updatedWhispers = whispers.map((todo) =>
+      whispers.id === id ? { ...whispers, text: newText } : whispers
     );
-    setTodos(updatedTodos);
+    setWhispers(updatedWhispers);
   };
 
   const toggleDone = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, done: !todo.done } : todo
+    const updatedWhispers = whispers.map((whisper) =>
+      whisper.id === id ? { ...whisper, done: !whisper.done } : whisper
     );
-    setTodos(updatedTodos);
+    setWhispers(updatedWhispers);
   };
 
-  const deleteTodo = (id) => {
-    const filteredTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(filteredTodos);
+  const deleteWhisper = (id) => {
+    const filteredWhispers = whispers.filter((whisper) => whisper.id !== id);
+    setWhispers(filteredWhispers);
   };
 
   return (
@@ -44,24 +44,24 @@ const Feed = () => {
           <textarea
             name=""
             id=""
-            rows="5"
+            rows="3"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="What's happening?"
             className="post__input"
           ></textarea>
           <div className="button">
-            <button onClick={addTodo}>Whisper</button>
+            <button onClick={addWhisper}>Whisper</button>
           </div>
         </div>
       </div>
       <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
+        {whispers.map((whisper) => (
+          <li key={whisper.id}>
             <img src={pfp} className="pfp" />
             <div className="post__content">
-              <p>{todo.text}</p>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <p>{whisper.text}</p>
+              <button onClick={() => deleteWhisper(whisper.id)}>Delete</button>
             </div>
           </li>
         ))}
